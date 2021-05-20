@@ -13,7 +13,12 @@ public class IsOS : MonoBehaviour
     public static void doThing(GameObject clickedObject)
     {
         detected = clickedObject;
-        Debug.Log(detected.name);
+        if (detected.GetComponent<IsOS>().clickable)
+        {
+            MasterScript.EnableCrosshairAll();
+            MasterScript.setSubText(detected.GetComponent<IsOS>().text);
+            MasterScript.ShowSubText();
+        }
 
     }
             

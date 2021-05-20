@@ -11,25 +11,31 @@ using UnityEngine.EventSystems;
 public class CastRay : MonoBehaviour
 {
 
-    public static GameObject shootDetectedObject;
+    public static GameObject detected;
 
-    public static void Shoot(Camera ShootCAM, int layerMask, float range)
+    public void Awake()
+    {
+        detected = null;
+    }
+
+
+    public static bool Shoot(Camera ShootCAM, int layerMask, float range)
     {
         RaycastHit hit;
         Ray ray = ShootCAM.ScreenPointToRay(Input.mousePosition);
-        
+        bool foundSomething;
 
         //if raycast hit any object on Layer
         if (Physics.Raycast(ray, out hit, range, layerMask) && !EventSystem.current.IsPointerOverGameObject())
         {
-            shootDetectedObject = hit.transform.gameObject;
+            detected = hit.transform.gameObject;
+            foundSomething = true;
+
         }
         else
-        {
-            shootDetectedObject = null;
-        }
+            foundSomething = false;
 
-        
+        return foundSomething;
 
     }
 

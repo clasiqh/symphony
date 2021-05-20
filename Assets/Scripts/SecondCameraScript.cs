@@ -10,24 +10,33 @@ public class SecondCameraScript : MonoBehaviour
 
     private void Update()
     {
-        CastRay.Shoot(this.GetComponent<Camera>(), layerMask, range); //(OPTIMISE LATER: shoot only when mouse moves)
-        Debug.Log(CastRay.shootDetectedObject.name);
 
-        /*
-        osObject = detectedByCAM2.GetComponent<IsOS>();
-        if (osObject != null && osObject.clickable == true)
+        //check for object on layer OS
+        if (CastRay.Shoot(this.GetComponent<Camera>(), layerMask, range)) //(OPTIMISE LATER: shoot only when mouse moves)
         {
-            MasterScript.EnableCrosshairAll();
-            if (Input.GetMouseButtonDown(0))
+
+            //if the detected Object has IsOS Component
+            if (CastRay.detected.GetComponent<IsOS>() != null)
             {
-                GameObject clickedObject = detectedByCAM2;
-                IsOS.doThing(clickedObject);
+                IsOS osObject = CastRay.detected.GetComponent<IsOS>();
+
+                //if that OS object is clickable
+                if (osObject.clickable)
+                {
+                    MasterScript.EnableCrosshairAll();
+                    if (Input.GetMouseButtonDown(0)) //if clicked on the clickable object
+                    {
+                        Debug.Log("Clicked: " + osObject.transform.name);
+                    }
+                }
+                else MasterScript.DisableCrosshairDark(); //if the object has IsOS component but isn't clickable
+
             }
+            else MasterScript.DisableCrosshairDark(); //if detected object doesn't have a IsOS component
 
         }
-        else
-            MasterScript.DisableCrosshairDark();
-        */
+        else MasterScript.DisableCrosshairDark(); //if no object detected by ray
+
 
     }
 

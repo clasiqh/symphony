@@ -19,28 +19,48 @@ public class MainCameraScript : MonoBehaviour
         //Shoot Raycast only when in trigger zones
         if (volume.isInZone)
         {
-            CastRay.Shoot(GameObject.Find("CAM1").GetComponent<Camera>(), layerMask, range); //(OPTIMISE LATER: shoot only when mouse moves)
-            Debug.Log(CastRay.shootDetectedObject.name);
 
-            /*
-
-            if (detected.GetComponent<IsUsable>() != null)
+            //if something is hit in trigger zone
+            if(CastRay.Shoot(GameObject.Find("CAM1").GetComponent<Camera>(), layerMask, range))
             {
-                usableObject = detected.GetComponent<IsUsable>();
-                MasterScript.setSubText(usableObject.displayText);
-                MasterScript.EnableCrosshairAll();
+
+                //and if that hit object is Interactive.
+                if (CastRay.detected.GetComponent<IsInteractive>() != null)
+                {
+
+                    IsInteractive usableObject = CastRay.detected.GetComponent<IsInteractive>();
+                    MasterScript.setSubText(usableObject.displayText);
+                    MasterScript.ShowSubText();
+
+                    //if that object is usable
+                    if (usableObject.canBeUsed)
+                    {
+                        MasterScript.EnableCrosshairAll();
+                    }
+                }
+
+                //and if that hit object is not Interactive.
+                else
+                {
+                    MasterScript.setSubText(" ");
+                    MasterScript.HideSubText();
+                    MasterScript.DisableCrosshairDark();
+                }
 
             }
-            
-            //if object that was detected isn't usable
             else
             {
-                MasterScript.setSubText("");
+                MasterScript.setSubText(" ");
+                MasterScript.HideSubText();
                 MasterScript.DisableCrosshairDark();
-                detected = null;
+
             }
-            */
+
+            //if object that was detected is usable
+            
+
         }
+
 
     }
 }

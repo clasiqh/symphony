@@ -8,11 +8,12 @@ public class MasterScript : MonoBehaviour
     public static GameObject crosshair;
     public static GameObject crosshairActive;
     public static GameObject canvas;
-    public static GameObject subText;
+    private static GameObject subText;
     public static GameObject pp;
     public static GameObject pp2;
     public static GameObject CAM1;
     public static GameObject CAM2;
+    private static GameObject screenUI;
 
 
     public void Awake()
@@ -25,12 +26,16 @@ public class MasterScript : MonoBehaviour
         pp2 = GameObject.Find("CAM2_PP");
         CAM1 = GameObject.Find("CAM1");
         CAM2 = GameObject.Find("CAM2");
+        screenUI = GameObject.Find("ScreenUI");
     }
 
     public void Start()
     {
         DisableCrosshairDark();
         EnableCAM1();
+        HideSubText();
+        disableScreen();
+        
 
     }
 
@@ -47,19 +52,29 @@ public class MasterScript : MonoBehaviour
     }
 
 
-    //NAME OF OBJECT
-    public static void DisableNameOfObject()
+    //SubText
+    public static void HideSubText()
     {
         subText.SetActive(false);
     }
-    public static void EnableNameOfObject()
+    public static void ShowSubText()
     {
         subText.SetActive(true);
     }
-
     public static void setSubText(string textToSet)
     {
         subText.GetComponent<TextMeshProUGUI>().SetText(textToSet);
+    }
+
+
+    //SCREEN
+    public static void disableScreen()
+    {
+        screenUI.SetActive(false);
+    }
+    public static void enableScreen()
+    {
+        screenUI.SetActive(true);
     }
 
 
