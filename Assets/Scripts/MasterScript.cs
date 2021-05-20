@@ -126,4 +126,16 @@ public class MasterScript : MonoBehaviour
         pp2.SetActive(true);
     }
 
+
+
+    public static IEnumerator wait(float secs)
+    {
+            yield return new WaitForSeconds(secs);
+
+    }
+
+
+
+
+
 }

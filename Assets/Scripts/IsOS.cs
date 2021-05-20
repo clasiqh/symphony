@@ -7,22 +7,14 @@ public class IsOS : MonoBehaviour
 {
 
     public bool clickable = false;
+    public static GameObject detected;
+    public string text;
 
-    private void Update()
+    public static void doThing(GameObject clickedObject)
     {
+        detected = clickedObject;
+        Debug.Log(detected.name);
 
-        if (Camera_OS.detectedObject != null && Camera_OS.detectedObject.GetComponent<IsOS>().clickable)
-        {
-            MasterScript.EnableCrosshairAll();
-            if (Input.GetMouseButtonDown(0))
-            {
-
-            }
-        }
-        else
-        {
-            MasterScript.DisableCrosshairDark();
-        }
     }
             
 
