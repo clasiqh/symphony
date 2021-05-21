@@ -2029,7 +2029,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17d01ad7f9069154eb9375a4ea6bb91d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  setPassword: 1234
 --- !u!114 &816459160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4676,6 +4675,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3791525406698288508, guid: 5c7d07d4aa632bd4d963e23233dbb226, type: 3}
+      propertyPath: m_Name
+      value: Cursor
+      objectReference: {fileID: 0}
     - target: {fileID: 3791808766583591495, guid: 5c7d07d4aa632bd4d963e23233dbb226, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -6051,8 +6054,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 166.51465, y: 225.77043, z: 53.58841}
-  m_Center: {x: -34.654694, y: -73.6993, z: 26.496382}
+  m_Size: {x: 159.00307, y: 219.22278, z: 53.588417}
+  m_Center: {x: -30.898985, y: -70.42549, z: 26.496475}
 --- !u!33 &3713576237955656233
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -9,25 +9,15 @@ public class SwitchCam : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown("tab"))
-            switchToCAM2();
+            MasterScript.EnableCAM2();
 
         if (Input.GetKeyDown("escape"))
-            switchToCAM1();
+        {
+            MasterScript.EnableCAM1();
+            MasterScript.disableScreen();
+        }
+            
     }
-
-    //MAIN CAM
-    public static void switchToCAM1()
-    {
-        MasterScript.EnableCAM1();
-    }
-
-    public static void switchToCAM2()
-    {
-        MasterScript.EnableCAM2();
-    }
-
-    
-
 
 
 

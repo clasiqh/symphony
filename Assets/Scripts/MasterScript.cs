@@ -32,7 +32,7 @@ public class MasterScript : MonoBehaviour
         DisableCrosshairDark();
         EnableCAM1();
         HideSubText();
-        disableScreen();
+        
 
 
     }
@@ -131,8 +131,12 @@ public class MasterScript : MonoBehaviour
         pp.SetActive(true);
         pp2.SetActive(false);
         HideSubText();
-        disableScreen();
         DisableCrosshairDark();
+
+        /// don't disable screen here or refrences will not be set up on LoginManager
+        /// using SwitchCam for that
+
+
     }
     public static void EnableCAM2()
     {
