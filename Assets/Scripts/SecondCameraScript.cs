@@ -18,26 +18,49 @@ public class SecondCameraScript : MonoBehaviour
             //if the detected Object has IsOS Component
             if (CastRay.detected.GetComponent<IsOS>() != null)
             {
-                IsOS osObject = CastRay.detected.GetComponent<IsOS>();
 
                 //if that OS object is clickable
-                if (osObject.clickable)
+                if (CastRay.detected.GetComponent<IsOS>().clickable)
                 {
+
+                    //CODE HERE WILL RUN IF HOVERING ON CLICKABLE OBJECT
+
                     MasterScript.EnableCrosshairAll();
                     if (Input.GetMouseButtonDown(0)) //if clicked on the clickable object
                     {
-                        Debug.Log("Clicked: " + osObject.transform.name);
+                        LoginManager.runClickFunction(CastRay.detected);
                     }
+
+
                 }
                 else MasterScript.DisableCrosshairDark(); //if the object has IsOS component but isn't clickable
 
+
+
+                //code after this would be run while hovering on any 
+
+
             }
-            else MasterScript.DisableCrosshairDark(); //if detected object doesn't have a IsOS component
+            else //if detected object doesn't have a IsOS component
+            {
+                MasterScript.DisableCrosshairDark();
+                if (Input.GetMouseButtonDown(0))
+                {
+                    LoginManager.inputDeselected();
+                    LoginManager.enterButtonGlow.SetActive(false);
+                    MasterScript.setSubText(" ");
+                    MasterScript.HideSubText();
+                }
+            }
+
+
+
+
+
+
 
         }
         else MasterScript.DisableCrosshairDark(); //if no object detected by ray
-
-
-    }
+    } //update close
 
 }

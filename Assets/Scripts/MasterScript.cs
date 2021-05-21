@@ -13,6 +13,7 @@ public class MasterScript : MonoBehaviour
     public static GameObject pp2;
     public static GameObject CAM1;
     public static GameObject CAM2;
+
     private static GameObject screenUI;
 
 
@@ -27,15 +28,12 @@ public class MasterScript : MonoBehaviour
         CAM1 = GameObject.Find("CAM1");
         CAM2 = GameObject.Find("CAM2");
         screenUI = GameObject.Find("ScreenUI");
-    }
 
-    public void Start()
-    {
         DisableCrosshairDark();
         EnableCAM1();
         HideSubText();
         disableScreen();
-        
+
 
     }
 
@@ -132,22 +130,31 @@ public class MasterScript : MonoBehaviour
         CAM2.SetActive(false);
         pp.SetActive(true);
         pp2.SetActive(false);
+        HideSubText();
+        disableScreen();
+        DisableCrosshairDark();
     }
     public static void EnableCAM2()
     {
+
         CAM1.SetActive(false);
         CAM2.SetActive(true);
         pp.SetActive(false);
         pp2.SetActive(true);
+        HideSubText();
+        enableScreen();
+        DisableCrosshairDark();
     }
 
 
 
-    public static IEnumerator wait(float secs)
+    public static void toast(string text)
     {
-            yield return new WaitForSeconds(secs);
+        setSubText(text);
+        ShowSubText();
 
     }
+
 
 
 

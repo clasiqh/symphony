@@ -36,6 +36,8 @@ public class MainCameraScript : MonoBehaviour
                     if (usableObject.canBeUsed)
                     {
                         MasterScript.EnableCrosshairAll();
+                        if(Input.GetKeyDown(KeyCode.E))
+                        IsInteractive.doStuff();
                     }
                 }
 
