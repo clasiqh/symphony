@@ -18,6 +18,7 @@ public class LoginManager : MonoBehaviour
     public static GameObject objectDetected;
 
 
+
     //only used to make it changable in inspector
 
     public static string staticPasswordString = "1234";                     // S E T  P A S S W O R D  H E R E

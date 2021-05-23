@@ -12,23 +12,28 @@ public class CastRay : MonoBehaviour
 {
 
     public static GameObject detected;
+    public static float hitDistance;
+    public static bool foundSomething;
+    public static RaycastHit hit;
+
 
     public void Awake()
     {
-        detected = null;
+        detected = null; 
     }
 
 
     public static bool Shoot(Camera ShootCAM, int layerMask, float range)
     {
-        RaycastHit hit;
+
+
         Ray ray = ShootCAM.ScreenPointToRay(Input.mousePosition);
-        bool foundSomething;
 
         //if raycast hit any object on Layer
         if (Physics.Raycast(ray, out hit, range, layerMask) && !EventSystem.current.IsPointerOverGameObject())
         {
             detected = hit.transform.gameObject;
+            hitDistance = Vector3.Distance(detected.transform.position, hit.point);
             foundSomething = true;
 
         }
@@ -38,6 +43,17 @@ public class CastRay : MonoBehaviour
         return foundSomething;
 
     }
+
+    private void OnDrawGizmos()
+    {
+        if (foundSomething)
+        {
+            Gizmos.DrawSphere(hit.point, 0.1f);
+            Debug.DrawRay(MasterScript.CAM1.transform.position, MasterScript.CAM1.transform.forward * Vector3.Distance(MasterScript.CAM1.transform.position, hit.point));
+        }
+    }
+
+
 
 
 

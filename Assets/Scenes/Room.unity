@@ -820,6 +820,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DSLR
       objectReference: {fileID: 0}
+    - target: {fileID: 1951365995088226, guid: 1a5a73e93b869204898d14ba1945e0a9, type: 3}
+      propertyPath: m_TagString
+      value: lookable
+      objectReference: {fileID: 0}
     - target: {fileID: 4438665167115368, guid: 1a5a73e93b869204898d14ba1945e0a9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.319
@@ -1084,96 +1088,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickable: 1
   text: button
---- !u!1 &419034249
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 419034252}
-  - component: {fileID: 419034251}
-  - component: {fileID: 419034250}
-  - component: {fileID: 419034253}
-  - component: {fileID: 419034254}
-  m_Layer: 2
-  m_Name: Raycast Volume
-  m_TagString: RaycastVolume
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &419034250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419034249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGlobal: 0
-  priority: 0
-  blendDistance: 1
-  weight: 1
-  sharedProfile: {fileID: 0}
---- !u!65 &419034251
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419034249}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.4154115, y: 1.729074, z: 2.2989802}
-  m_Center: {x: 0.4761274, y: 0.89534926, z: -0.36362815}
---- !u!4 &419034252
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419034249}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &419034253
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419034249}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.9253376, y: 1.0347829, z: 1.7538958}
-  m_Center: {x: -2.5030255, y: 1.2016723, z: 3.3911548}
---- !u!114 &419034254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419034249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2efe4d00d6d3c174daf7f068ba6c5435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isInZone: 0
 --- !u!1001 &446184334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1249,7 +1163,7 @@ GameObject:
   - component: {fileID: 455731399}
   m_Layer: 0
   m_Name: poloroids
-  m_TagString: Untagged
+  m_TagString: lookable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2186,14 +2100,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844647794}
-  m_LocalRotation: {x: -0, y: -0.99904823, z: 0.04362128, w: 0}
-  m_LocalPosition: {x: 0.3779, y: 0.9596, z: -0.356}
-  m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000001}
+  m_LocalRotation: {x: -0.0017513081, y: 0.9943823, z: -0.1045138, w: -0.016662583}
+  m_LocalPosition: {x: 0.375, y: 0.96, z: -0.347}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 526859619}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 5, y: -180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!114 &844647799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2636,7 +2550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d114634662cc943afe1ec717a05328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 1
+  range: 100
   layerMask:
     serializedVersion: 2
     m_Bits: 1
@@ -2703,8 +2617,8 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 1000
-  field of view: 50.52806
+  far clip plane: 5000
+  field of view: 40
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -4085,7 +3999,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1591559718 stripped
 Transform:

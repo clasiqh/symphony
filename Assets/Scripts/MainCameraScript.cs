@@ -6,64 +6,67 @@ using UnityEngine;
 public class MainCameraScript : MonoBehaviour
 {
 
-    private VolumeEnter volume;
-    public float range = 0.8f;
+    public float range = 100f;
     [SerializeField] private LayerMask layerMask;
+    
+
 
     public void Awake()
     {
-        volume = GameObject.Find("Raycast Volume").GetComponent<VolumeEnter>();
+        
     }
     public void Update()
     {
-        //Shoot Raycast only when in trigger zones
-        if (volume.isInZone)
+
+
+
+        //if something is hit
+        if (CastRay.Shoot(GameObject.Find("CAM1").GetComponent<Camera>(), layerMask, range))
         {
 
-            //if something is hit in trigger zone
-            if(CastRay.Shoot(GameObject.Find("CAM1").GetComponent<Camera>(), layerMask, range))
+
+
+            //and if that hit object is Interactive.
+            if (CastRay.detected.GetComponent<IsInteractive>() != null && CastRay.hitDistance<1.0f)
             {
+                
+                IsInteractive usableObject = CastRay.detected.GetComponent<IsInteractive>();
+                MasterScript.setSubText(usableObject.displayText);
+                MasterScript.ShowSubText();
 
-                //and if that hit object is Interactive.
-                if (CastRay.detected.GetComponent<IsInteractive>() != null)
+                //if that object is usable
+                if (usableObject.canBeUsed)
                 {
-
-                    IsInteractive usableObject = CastRay.detected.GetComponent<IsInteractive>();
-                    MasterScript.setSubText(usableObject.displayText);
-                    MasterScript.ShowSubText();
-
-                    //if that object is usable
-                    if (usableObject.canBeUsed)
-                    {
-                        MasterScript.EnableCrosshairAll();
-                        if(Input.GetKeyDown(KeyCode.E))
-                        IsInteractive.doStuff();
-                    }
+                    MasterScript.EnableCrosshairAll();
+                    if(Input.GetKeyDown(KeyCode.E))
+                    IsInteractive.doStuff();
                 }
-
-                //and if that hit object is not Interactive.
-                else
-                {
-                    MasterScript.setSubText(" ");
-                    MasterScript.HideSubText();
-                    MasterScript.DisableCrosshairDark();
-                }
-
             }
+
+            //and if that hit object is not Interactive.
             else
             {
                 MasterScript.setSubText(" ");
                 MasterScript.HideSubText();
                 MasterScript.DisableCrosshairDark();
-
             }
 
-            //if object that was detected is usable
-            
+        }
+        else
+        {
+            MasterScript.setSubText(" ");
+            MasterScript.HideSubText();
+            MasterScript.DisableCrosshairDark();
 
         }
 
+        //if object that was detected is usable
+            
 
     }
+
+    
+
+
 }
 

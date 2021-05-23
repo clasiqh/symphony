@@ -9,6 +9,7 @@ TagManager:
   - OS
   - Drawer
   - Computer
+  - lookable
   layers:
   - Default
   - TransparentFX
