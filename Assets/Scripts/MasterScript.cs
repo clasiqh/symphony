@@ -8,11 +8,14 @@ public class MasterScript : MonoBehaviour
     public static GameObject crosshair;
     public static GameObject crosshairActive;
     public static GameObject canvas;
-    private static GameObject subText;
+    public static GameObject subText;
     public static GameObject pp;
     public static GameObject pp2;
     public static GameObject CAM1;
     public static GameObject CAM2;
+    public static GameObject DOF_pp;
+
+    public static bool interacting = false;
 
     private static GameObject screenUI;
 
@@ -23,8 +26,9 @@ public class MasterScript : MonoBehaviour
         crosshairActive = GameObject.Find("crosshairActive");
         canvas = GameObject.Find("Canvas");
         subText = GameObject.Find("subText");
-        pp = GameObject.Find("Post Processing");
+        pp = GameObject.Find("CAM1_PP");
         pp2 = GameObject.Find("CAM2_PP");
+        DOF_pp = GameObject.Find("DOF_PP");
         CAM1 = GameObject.Find("CAM1");
         CAM2 = GameObject.Find("CAM2");
         screenUI = GameObject.Find("ScreenUI");
@@ -32,6 +36,7 @@ public class MasterScript : MonoBehaviour
         DisableCrosshairDark();
         EnableCAM1();
         HideSubText();
+        DisableDOF();
         
 
 
@@ -113,11 +118,23 @@ public class MasterScript : MonoBehaviour
     public static void EnablePP()
     {
         pp.SetActive(true);
+        DOF_pp.SetActive(false);
     }
 
     public static void DisablePP()
     {
         pp.SetActive(false);
+        DOF_pp.SetActive(false);
+    }
+
+    public static void EnableDOF()
+    {
+        DOF_pp.SetActive(true);
+    }
+
+    public static void DisableDOF()
+    {
+        DOF_pp.SetActive(false);
     }
 
 

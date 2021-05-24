@@ -48,7 +48,7 @@ public class CastRay : MonoBehaviour
     {
         if (foundSomething)
         {
-            Gizmos.DrawSphere(hit.point, 0.1f);
+            Gizmos.DrawSphere(hit.point, 0.05f);
             Debug.DrawRay(MasterScript.CAM1.transform.position, MasterScript.CAM1.transform.forward * Vector3.Distance(MasterScript.CAM1.transform.position, hit.point));
         }
     }

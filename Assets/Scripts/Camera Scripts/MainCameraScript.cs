@@ -1,0 +1,88 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[DisallowMultipleComponent]
+public class MainCameraScript : MonoBehaviour
+{
+
+    public float range = 100f;
+    [SerializeField] private LayerMask layerMask;
+    private static Camera_WASD_movement wasdScript;
+
+
+
+    public void Awake()
+    {
+
+        wasdScript = this.GetComponent<Camera_WASD_movement>();
+        wasdScript.enabled = true;
+        
+    }
+
+
+
+
+    public void Update()
+    {
+
+        check();
+
+
+
+    } //update close
+
+
+
+
+
+
+
+
+
+    private void check()
+    {
+        //if something is hit in layer default within range
+        if (CastRay.Shoot(this.GetComponent<Camera>(), layerMask, range))
+        {
+
+            //if that hit object is Interactive, show subtext & check if can be used.
+            if (CastRay.detected.GetComponent<IsInteractive>() != null && CastRay.hitDistance < 1.0f)
+            {
+
+                IsInteractive usableObject = CastRay.detected.GetComponent<IsInteractive>();
+                MasterScript.setSubText(usableObject.displayText);
+                MasterScript.ShowSubText();
+
+                //if that object is usable- turn on crosshair and on pressing E run doStuff().
+                if (usableObject.canBeUsed)
+                {
+                    MasterScript.EnableCrosshairAll();
+                    if (Input.GetKeyDown(KeyCode.E))
+                        IsInteractive.doStuff();
+                }
+            }
+
+            //and if that hit object is not Interactive.
+            else
+            {
+                MasterScript.setSubText(" ");
+                MasterScript.HideSubText();
+                MasterScript.DisableCrosshairDark();
+            }
+
+        }
+        else //if nothing is hit
+        {
+            MasterScript.setSubText(" ");
+            MasterScript.HideSubText();
+            MasterScript.DisableCrosshairDark();
+
+        }
+    }
+
+
+
+
+}
+

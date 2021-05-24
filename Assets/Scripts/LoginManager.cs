@@ -22,7 +22,7 @@ public class LoginManager : MonoBehaviour
     //only used to make it changable in inspector
 
     public static string staticPasswordString = "1234";                     // S E T  P A S S W O R D  H E R E
-    public static string typedPassword = "1234";
+    public static string typedPassword = "123";
 
 
 
@@ -49,8 +49,6 @@ public class LoginManager : MonoBehaviour
         enterButtonGlow.SetActive(false);
         enterPasswordText.SetActive(true);
         LoginGroup.SetActive(true);
-
-        MasterScript.disableScreen(); //disable screen after all references have been set up
 
 
     }
@@ -112,7 +110,8 @@ public class LoginManager : MonoBehaviour
         cursorObject.SetActive(false);
         passwordInput.SetActive(true);
         passwordInputGlow.SetActive(false);
-        passwordEntered.SetActive(true);
+        MasterScript.setSubText("");
+        MasterScript.HideSubText();
 
     }
 

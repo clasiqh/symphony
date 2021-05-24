@@ -118,8 +118,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1779
-      y: 1144
+      x: 565
+      y: 1841
       width: 115
       height: 114
     spriteID: 96edf3dfc2062a34797e4ee24eeceacc
@@ -132,7 +132,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 571, y: 784}
+    uvTransform: {x: -643, y: 1481}
   - name: Enter Button
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -140,8 +140,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1902
-      y: 1144
+      x: 522
+      y: 1964
       width: 72
       height: 70
     spriteID: 870542e7ecba5e54f8f95d3fda1bb8fb
@@ -154,7 +154,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 673, y: 762}
+    uvTransform: {x: -707, y: 1582}
   - name: Password Input Glow
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -162,8 +162,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 700
-      y: 1144
+      x: 4
+      y: 1841
       width: 553
       height: 115
     spriteID: 3e27bbfac846c8e4e937248a01c622b3
@@ -176,7 +176,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 33, y: 785}
+    uvTransform: {x: -663, y: 1482}
   - name: Password Input
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -184,8 +184,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1261
-      y: 1144
+      x: 4
+      y: 1964
       width: 510
       height: 72
     spriteID: 58470b4750146ce4c8b6e25049448f74
@@ -198,7 +198,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 572, y: 762}
+    uvTransform: {x: -685, y: 1582}
   - name: Login BG
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -250,8 +250,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1261
-      y: 1224
+      x: 1045
+      y: 1404
       width: 273
       height: 31
     spriteID: 62103657eca91b048b34da9bfe76801b
@@ -264,14 +264,124 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 448, y: 824}
+    uvTransform: {x: 232, y: 1004}
+  - name: folder
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1338
+      y: 1144
+      width: 257
+      height: 261
+    spriteID: cb6b6abe3af7e7f40a2b090733dba231
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1129, y: 423}
+  - name: bin
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1840
+      y: 1144
+      width: 173
+      height: 268
+    spriteID: cc8e5e166a67ac24e8aceedb401e4e64
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 325, y: 1063}
+  - name: web
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1603
+      y: 1144
+      width: 229
+      height: 276
+    spriteID: eea0ab5cbee7f0f4683da364ea67956f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 114, y: 423}
+  - name: computer
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1045
+      y: 1144
+      width: 285
+      height: 252
+    spriteID: 61b31488624ba65478a73dc590bea7a4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 227, y: 430}
+  - name: black_select
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 700
+      y: 1144
+      width: 337
+      height: 336
+    spriteID: 6cf43b3dc1590ea4ca3477de4f414ce9
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 531, y: 462}
   platformSettings:
   - name: Default
     overridden: 1
     maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     forceMaximumCompressionQuality_BC6H_BC7: 0
     crunchedCompression: 0
@@ -315,35 +425,35 @@ ScriptedImporter:
     parentIndex: 0
     spriteID: 96edf3dfc2062a34797e4ee24eeceacc
     layerID: 59
-    mosaicPosition: {x: 1779, y: 1144}
+    mosaicPosition: {x: 565, y: 1841}
   - name: Enter Button
     spriteName: Enter Button
     isGroup: 0
     parentIndex: 0
     spriteID: 870542e7ecba5e54f8f95d3fda1bb8fb
     layerID: 57
-    mosaicPosition: {x: 1902, y: 1144}
+    mosaicPosition: {x: 522, y: 1964}
   - name: Password Input Glow
     spriteName: Password Input Glow
     isGroup: 0
     parentIndex: 0
     spriteID: 3e27bbfac846c8e4e937248a01c622b3
     layerID: 63
-    mosaicPosition: {x: 700, y: 1144}
+    mosaicPosition: {x: 4, y: 1841}
   - name: Password Input
     spriteName: Password Input
     isGroup: 0
     parentIndex: 0
     spriteID: 58470b4750146ce4c8b6e25049448f74
     layerID: 60
-    mosaicPosition: {x: 1261, y: 1144}
+    mosaicPosition: {x: 4, y: 1964}
   - name: enter password
     spriteName: enter password
     isGroup: 0
     parentIndex: 0
     spriteID: 62103657eca91b048b34da9bfe76801b
     layerID: 83
-    mosaicPosition: {x: 1261, y: 1224}
+    mosaicPosition: {x: 1045, y: 1404}
   - name: cursor
     spriteName: cursor
     isGroup: 0
@@ -358,6 +468,48 @@ ScriptedImporter:
     spriteID: d111f834138c4f749b876a2addc3aaad
     layerID: 75
     mosaicPosition: {x: 4, y: 4}
+  - name: Desktop
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 177
+    mosaicPosition: {x: 0, y: 0}
+  - name: folder
+    spriteName: folder
+    isGroup: 0
+    parentIndex: 9
+    spriteID: cb6b6abe3af7e7f40a2b090733dba231
+    layerID: 176
+    mosaicPosition: {x: 1338, y: 1144}
+  - name: bin
+    spriteName: bin
+    isGroup: 0
+    parentIndex: 9
+    spriteID: cc8e5e166a67ac24e8aceedb401e4e64
+    layerID: 170
+    mosaicPosition: {x: 1840, y: 1144}
+  - name: web
+    spriteName: web
+    isGroup: 0
+    parentIndex: 9
+    spriteID: eea0ab5cbee7f0f4683da364ea67956f
+    layerID: 164
+    mosaicPosition: {x: 1603, y: 1144}
+  - name: computer
+    spriteName: computer
+    isGroup: 0
+    parentIndex: 9
+    spriteID: 61b31488624ba65478a73dc590bea7a4
+    layerID: 158
+    mosaicPosition: {x: 1045, y: 1144}
+  - name: black_select
+    spriteName: black_select
+    isGroup: 0
+    parentIndex: 9
+    spriteID: 6cf43b3dc1590ea4ca3477de4f414ce9
+    layerID: 173
+    mosaicPosition: {x: 700, y: 1144}
   characterData:
     bones: []
     parts: []
