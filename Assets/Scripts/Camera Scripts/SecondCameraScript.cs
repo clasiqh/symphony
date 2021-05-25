@@ -7,6 +7,11 @@ public class SecondCameraScript : MonoBehaviour
     public float range = 0.5f;
     [SerializeField] private LayerMask layerMask;
 
+    private void Awake()
+    {
+        layerMask = LayerMask.GetMask("OS");
+    }
+
 
     private void Update()
     {
@@ -24,32 +29,34 @@ public class SecondCameraScript : MonoBehaviour
                 {
 
                     //CODE HERE WILL RUN IF HOVERING ON CLICKABLE OBJECT
-
+                    OSManager.runHoverFunction();
                     MasterScript.EnableCrosshairAll();
+                    MasterScript.toast(CastRay.detected.GetComponent<IsOS>().text);
                     if (Input.GetMouseButtonDown(0)) //if clicked on the clickable object
                     {
-                        LoginManager.runClickFunction(CastRay.detected);
+                        OSManager.runClickFunction();
                     }
 
 
                 }
-                else MasterScript.DisableCrosshairDark(); //if the object has IsOS component but isn't clickable
+                else //if the object has IsOS component but isn't clickable
+                {
+                    MasterScript.DisableCrosshairDark();
+                    MasterScript.HideSubText();
+                    DesktopManager.disableAllBlack();
+                }
 
-
-
-                //code after this would be run while hovering on any 
 
 
             }
             else //if detected object doesn't have a IsOS component
             {
                 MasterScript.DisableCrosshairDark();
+                MasterScript.HideSubText();
+                DesktopManager.disableAllBlack();
                 if (Input.GetMouseButtonDown(0))
                 {
                     LoginManager.inputDeselected();
-                    LoginManager.enterButtonGlow.SetActive(false);
-                    MasterScript.setSubText(" ");
-                    MasterScript.HideSubText();
                 }
             }
 
@@ -60,7 +67,13 @@ public class SecondCameraScript : MonoBehaviour
 
 
         }
-        else MasterScript.DisableCrosshairDark(); //if no object detected by ray
+        else //if no object detected by ray
+        {
+            MasterScript.DisableCrosshairDark();
+            MasterScript.HideSubText();
+            DesktopManager.disableAllBlack();
+        }
+         
     } //update close
 
 }

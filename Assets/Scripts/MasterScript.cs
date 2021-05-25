@@ -7,6 +7,7 @@ public class MasterScript : MonoBehaviour
 {
     public static GameObject crosshair;
     public static GameObject crosshairActive;
+    public static GameObject crosshairRed;
     public static GameObject canvas;
     public static GameObject subText;
     public static GameObject pp;
@@ -24,6 +25,7 @@ public class MasterScript : MonoBehaviour
     {
         crosshair = GameObject.Find("crosshair");
         crosshairActive = GameObject.Find("crosshairActive");
+        crosshairRed = GameObject.Find("crosshairRed");
         canvas = GameObject.Find("Canvas");
         subText = GameObject.Find("subText");
         pp = GameObject.Find("CAM1_PP");
@@ -58,6 +60,7 @@ public class MasterScript : MonoBehaviour
     //SubText
     public static void HideSubText()
     {
+        setSubText(" ");
         subText.SetActive(false);
     }
     public static void ShowSubText()
@@ -87,6 +90,7 @@ public class MasterScript : MonoBehaviour
     {
         crosshair.SetActive(false);
         crosshairActive.SetActive(false);
+        crosshairRed.SetActive(false);
     }
     public static void EnableCrosshairAll()
     {
@@ -110,9 +114,21 @@ public class MasterScript : MonoBehaviour
     public static void DisableCrosshairDark()
     {
         crosshairActive.SetActive(false);
+        crosshairRed.SetActive(false);
 
     }
 
+    public static void EnableCrosshairRed()
+    {
+        crosshairRed.SetActive(true);
+        crosshairActive.SetActive(false);
+    }
+
+    public static void DisableCrosshairRed()
+    {
+        crosshairRed.SetActive(true);
+        crosshairActive.SetActive(false);
+    }
 
     //POST PROCESSING
     public static void EnablePP()

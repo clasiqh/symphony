@@ -7,6 +7,7 @@ public class MainCameraScript : MonoBehaviour
 {
 
     public float range = 100f;
+    public float detectionRange = 1.0f;
     [SerializeField] private LayerMask layerMask;
     private static Camera_WASD_movement wasdScript;
 
@@ -14,7 +15,7 @@ public class MainCameraScript : MonoBehaviour
 
     public void Awake()
     {
-
+        layerMask = LayerMask.GetMask("Default");
         wasdScript = this.GetComponent<Camera_WASD_movement>();
         wasdScript.enabled = true;
         
@@ -47,7 +48,7 @@ public class MainCameraScript : MonoBehaviour
         {
 
             //if that hit object is Interactive, show subtext & check if can be used.
-            if (CastRay.detected.GetComponent<IsInteractive>() != null && CastRay.hitDistance < 1.0f)
+            if (CastRay.detected.GetComponent<IsInteractive>() != null && CastRay.hitDistance < detectionRange)
             {
 
                 IsInteractive usableObject = CastRay.detected.GetComponent<IsInteractive>();
@@ -61,6 +62,8 @@ public class MainCameraScript : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.E))
                         IsInteractive.doStuff();
                 }
+                else
+                    MasterScript.EnableCrosshairRed();
             }
 
             //and if that hit object is not Interactive.

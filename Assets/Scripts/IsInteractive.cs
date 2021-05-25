@@ -13,6 +13,7 @@ public class IsInteractive : MonoBehaviour
     public static Vector3 startingPosition;
     public static Quaternion startingRotation;
     public static bool gravity;
+    public static bool currentlyLooking = false;
 
 
 
@@ -55,26 +56,25 @@ public class IsInteractive : MonoBehaviour
             */
 
             case "lookable":
-                gravity = interactiveObjectScript.gravityEnabled;
-                if (interactiveObjectScript.isInteractedWith == false)
+                if (!interactiveObjectScript.isInteractedWith && !currentlyLooking)
                 {
-                    
+                    gravity = interactiveObjectScript.gravityEnabled;
                     Transform camTransform = MasterScript.CAM1.transform;
-
                     Select(camTransform.position + camTransform.forward * 0.4f, camTransform.position);
                     interactiveObjectScript.isInteractedWith = true;
                 }
-                else
+                else if(interactiveObjectScript.isInteractedWith && currentlyLooking)
                 {
                     Deselect();
                     interactiveObjectScript.isInteractedWith = false;
+                    
                 }
                     
                 break;
 
 
             default:
-                Debug.Log("default swtich case");
+                Debug.Log("default interactive object");
                 break;
         }
 
@@ -84,19 +84,22 @@ public class IsInteractive : MonoBehaviour
 
     private static void Select(Vector3 focusPosition, Vector3 camPosition)
     {
-        //Disable collider on camera so it doesn't collide with object
-        MasterScript.CAM1.GetComponent<CapsuleCollider>().isTrigger = true;
-        startingPosition = CastRay.detected.transform.position;
-        CastRay.detected.transform.position = focusPosition;
-        CastRay.detected.transform.LookAt(camPosition);
-        MasterScript.interacting = true;
-        MasterScript.EnableDOF();
-
-        if (gravity)
+        if (!currentlyLooking)
         {
-            CastRay.detected.GetComponent<Rigidbody>().useGravity = false;
-        }
+            //Disable collider on camera so it doesn't collide with object
+            MasterScript.CAM1.GetComponent<CapsuleCollider>().isTrigger = true;
+            startingPosition = CastRay.detected.transform.position;
+            CastRay.detected.transform.position = focusPosition;
+            CastRay.detected.transform.LookAt(camPosition);
+            MasterScript.interacting = true;
+            MasterScript.EnableDOF();
+            currentlyLooking = true;
 
+            if (gravity)
+            {
+                CastRay.detected.GetComponent<Rigidbody>().useGravity = false;
+            }
+        }
 
     }
 
@@ -108,6 +111,7 @@ public class IsInteractive : MonoBehaviour
         CastRay.detected.transform.position = startingPosition;
         MasterScript.CAM1.GetComponent<CapsuleCollider>().isTrigger = false;
         MasterScript.DisableDOF();
+        currentlyLooking = false;
 
         if (gravity)
         {

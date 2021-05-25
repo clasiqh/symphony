@@ -5,11 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - NameTag
-  - RaycastVolume
-  - OS
   - Drawer
   - Computer
   - lookable
+  - Login
+  - Desktop
   layers:
   - Default
   - TransparentFX

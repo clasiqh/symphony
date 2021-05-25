@@ -3,44 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class LoginManager : MonoBehaviour
+public class LoginManager : OSManager
 {
 
-    public static GameObject cursorObject; 
+    public static GameObject cursorObject;
     public static GameObject passwordEntered;
     public static GameObject passwordInput;
     public static GameObject passwordInputGlow;
     public static GameObject enterButton;
     public static GameObject enterButtonGlow;
-    public static GameObject LoginGroup;
     public static GameObject enterPasswordText;
 
-    public static GameObject objectDetected;
-
-
-
-    //only used to make it changable in inspector
 
     public static string staticPasswordString = "1234";                     // S E T  P A S S W O R D  H E R E
     public static string typedPassword = "123";
 
+    
 
-
-    public void Awake()
+    private void Awake()
     {
 
-
+        //find references
         cursorObject = GameObject.Find("Cursor");
-        LoginGroup = GameObject.Find("Login");
         passwordEntered = GameObject.Find("Password");
         enterPasswordText = GameObject.Find("enter password text");
         passwordInput = GameObject.Find("Password Input");
         passwordInputGlow = GameObject.Find("Password Input Glow");
-
         enterButton = GameObject.Find("Enter Button");
         enterButtonGlow = GameObject.Find("Enter Button Glow");
+        
 
 
+        //default states on game start
         cursorObject.SetActive(false);
         passwordEntered.SetActive(false);
         passwordInput.SetActive(true);
@@ -48,20 +42,17 @@ public class LoginManager : MonoBehaviour
         enterButton.SetActive(true);
         enterButtonGlow.SetActive(false);
         enterPasswordText.SetActive(true);
-        LoginGroup.SetActive(true);
 
 
     }
 
 
-    public static void runClickFunction(GameObject clickedObject)
+    public static void clickLogin()
     {
-        objectDetected = clickedObject;
+        
 
-        switch (clickedObject.name)
+        switch (objectDetected.name)
         {
-
-
 
             case "Enter Button":
                 enterButtonPressed();
@@ -87,7 +78,7 @@ public class LoginManager : MonoBehaviour
 
 
 
-    public static void inputSelected()
+    private static void inputSelected()
     {
 
 
@@ -112,10 +103,11 @@ public class LoginManager : MonoBehaviour
         passwordInputGlow.SetActive(false);
         MasterScript.setSubText("");
         MasterScript.HideSubText();
+        enterButtonGlow.SetActive(false);
 
     }
 
-    public static void enterButtonPressed()
+    private static void enterButtonPressed()
     {
         cursorObject.SetActive(false);
         passwordInputGlow.SetActive(false);
@@ -126,14 +118,14 @@ public class LoginManager : MonoBehaviour
     }
 
 
-    public static void checkpassword(string inputPassword)
+    private static void checkpassword(string inputPassword)
     {
         if (inputPassword == LoginManager.staticPasswordString)
         {
 
             MasterScript.toast("Right Password");
-            LoginGroup.SetActive(false);
-
+            enableDesktop();
+            GameObject.Destroy(LoginGroup);
         }
         else
         {
