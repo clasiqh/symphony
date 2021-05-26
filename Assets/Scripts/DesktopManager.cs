@@ -35,7 +35,7 @@ public class DesktopManager : OSManager
         bin.SetActive(true);
 
         disableAllBlack();
-
+        disableDesktop();
 
     }
 

@@ -16,6 +16,11 @@ public class SecondCameraScript : MonoBehaviour
     private void Update()
     {
 
+        if (Input.GetKeyDown("escape"))
+        {
+            MasterScript.EnableCAM1();
+        }
+
         //check for object on layer OS
         if (CastRay.Shoot(this.GetComponent<Camera>(), layerMask, range)) //(OPTIMISE LATER: shoot only when mouse moves)
         {

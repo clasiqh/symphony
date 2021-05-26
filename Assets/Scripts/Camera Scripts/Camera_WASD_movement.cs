@@ -20,21 +20,21 @@ public class Camera_WASD_movement: MonoBehaviour
     
     void Start()
     {
-        #if (UNITY_EDITOR) //Hide cursor in "Play" mode; only inside Unity editor.
+        
         Cursor.lockState = CursorLockMode.Locked;
-        #endif
+
         RotationHorizontal = this.transform.eulerAngles.y;    //Inhernit camera's horizontal orientation from editor.
     }
 
 
     void Update()
     {
-#if (UNITY_EDITOR) //Hide cursor in "Play" mode after losing viewport focus and bringing back cursor again; only inside Unity editor.
+ //Hide cursor in "Play" mode after losing viewport focus and bringing back cursor again; only inside Unity editor.
         if (Input.GetKey(KeyCode.Mouse0))
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
-#endif
+
 
         MouseSensitivityNormalized = ((MouseSensitivity / Time.deltaTime) / 100) * Time.deltaTime;
         RotationHorizontal += Input.GetAxis("Mouse X") * MouseSensitivityNormalized;

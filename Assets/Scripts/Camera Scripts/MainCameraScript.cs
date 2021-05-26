@@ -26,16 +26,25 @@ public class MainCameraScript : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetKeyDown("tab"))
+        {
+            MasterScript.EnableCAM2();
+        }
 
-        check();
-
+        if(!MasterScript.interacting)
+            check();
+        else if(MasterScript.interacting)
+        {
+            if (Input.GetKeyDown("escape"))
+            {
+                IsInteractive.Deselect();
+                MasterScript.setDefaultFOV();
+            }
+                
+        }
 
 
     } //update close
-
-
-
-
 
 
 

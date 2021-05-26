@@ -15,6 +15,7 @@ public class MasterScript : MonoBehaviour
     public static GameObject CAM1;
     public static GameObject CAM2;
     public static GameObject DOF_pp;
+    private static float defaultFOV = 54.79396f; // is defaultFOV - 20 for some reason idk
 
     public static bool interacting = false;
 
@@ -39,7 +40,7 @@ public class MasterScript : MonoBehaviour
         EnableCAM1();
         HideSubText();
         DisableDOF();
-        
+
 
 
     }
@@ -179,7 +180,6 @@ public class MasterScript : MonoBehaviour
         pp.SetActive(false);
         pp2.SetActive(true);
         HideSubText();
-        enableScreen();
         DisableCrosshairDark();
     }
 
@@ -190,6 +190,11 @@ public class MasterScript : MonoBehaviour
         setSubText(text);
         ShowSubText();
 
+    }
+
+    public static void setDefaultFOV()
+    {
+        MasterScript.CAM1.GetComponent<Camera>().fieldOfView = defaultFOV;
     }
 
 

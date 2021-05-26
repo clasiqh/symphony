@@ -25,7 +25,7 @@ public class OSManager : MonoBehaviour
 
         //default states
         enableLogin();
-        disableDesktop();
+
     }
 
 
@@ -69,22 +69,6 @@ public class OSManager : MonoBehaviour
         }
             
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     public static void enableLogin()
