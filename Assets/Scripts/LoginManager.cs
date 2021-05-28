@@ -101,7 +101,6 @@ public class LoginManager : OSManager
         cursorObject.SetActive(false);
         passwordInput.SetActive(true);
         passwordInputGlow.SetActive(false);
-        MasterScript.setSubText("");
         MasterScript.HideSubText();
         enterButtonGlow.SetActive(false);
 

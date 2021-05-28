@@ -45,7 +45,7 @@ public class Camera_WASD_movement: MonoBehaviour
 
         MovementSpeedNormalized = (MovementSpeed * Time.deltaTime) / 10;
 
-        if (!MasterScript.interacting)
+        if (!MasterScript.inspecting)
         {
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
             {

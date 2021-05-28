@@ -7,8 +7,6 @@ public class IsOS : MonoBehaviour
 {
 
     public bool clickable = false;
-    public static GameObject detected;
     public string text;
-
 
 }

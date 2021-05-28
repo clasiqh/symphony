@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8030699c1b45c6f4595df0f121c479df
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - defaultSound: {fileID: 8300000, guid: 02589f2b783fa804d8f04b4a3aa98455, type: 3}
+  - drawerOpen: {fileID: 8300000, guid: 2a5736d8cfa379a44b4813f4e04af035, type: 3}
+  - drawerClose: {fileID: 8300000, guid: 62dbd6f2e53026a49a98a16245b6bf26, type: 3}
+  - click: {fileID: 8300000, guid: 754679f2feec34c42b67d5f769ba20e8, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

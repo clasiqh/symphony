@@ -15,11 +15,14 @@ public class CastRay : MonoBehaviour
     public static float hitDistance;
     public static bool foundSomething;
     public static RaycastHit hit;
+    public static GameObject temp;
 
+    public static bool objectChange = false;  //true if object detected is different
 
     public void Awake()
     {
-        detected = null; 
+        temp = GameObject.Find("Game Manager");
+        detected = GameObject.Find("Game Manager"); 
     }
 
 
@@ -33,12 +36,31 @@ public class CastRay : MonoBehaviour
         if (Physics.Raycast(ray, out hit, range, layerMask) && !EventSystem.current.IsPointerOverGameObject())
         {
             detected = hit.transform.gameObject;
-            hitDistance = Vector3.Distance(detected.transform.position, hit.point);
+            hitDistance = Vector3.Distance(detected.transform.position, MasterScript.CAM1.transform.position);
             foundSomething = true;
+            if (temp != null)
+            {
+                if (temp.name != detected.name)
+                {
+                    objectChange = true;
+                    temp = detected;
+                }
+
+                else if (temp.name == detected.name)
+                    objectChange = false;
+            }
+            else
+            {
+                temp = GameObject.Find("Game Manager");
+            }
 
         }
         else
+        {
             foundSomething = false;
+            objectChange = false;
+        }
+            
 
         return foundSomething;
 

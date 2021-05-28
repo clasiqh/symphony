@@ -56,10 +56,12 @@ public class OSManager : MonoBehaviour
         {
             case "Login":
                 LoginManager.clickLogin();
+                AudioManager.clickSFX();
                 break;
 
             case "Desktop":
                 DesktopManager.clickDesktop();
+                AudioManager.clickSFX();
                 break;
 
 

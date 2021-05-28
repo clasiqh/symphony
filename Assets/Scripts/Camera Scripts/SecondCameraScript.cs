@@ -56,8 +56,7 @@ public class SecondCameraScript : MonoBehaviour
             }
             else //if detected object doesn't have a IsOS component
             {
-                MasterScript.DisableCrosshairDark();
-                MasterScript.HideSubText();
+                MasterScript.inactive();
                 DesktopManager.disableAllBlack();
                 if (Input.GetMouseButtonDown(0))
                 {
@@ -74,8 +73,7 @@ public class SecondCameraScript : MonoBehaviour
         }
         else //if no object detected by ray
         {
-            MasterScript.DisableCrosshairDark();
-            MasterScript.HideSubText();
+            MasterScript.inactive();
             DesktopManager.disableAllBlack();
         }
          

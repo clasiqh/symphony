@@ -17,9 +17,12 @@ public class MasterScript : MonoBehaviour
     public static GameObject DOF_pp;
     private static float defaultFOV = 54.79396f; // is defaultFOV - 20 for some reason idk
 
-    public static bool interacting = false;
+    public static bool inspecting = false;
+
+    public static GameObject selectedObject; //for select and deselect function (as CastRay.detected would change when inspecting)
 
     private static GameObject screenUI;
+
 
 
     public void Awake()
@@ -36,12 +39,11 @@ public class MasterScript : MonoBehaviour
         CAM2 = GameObject.Find("CAM2");
         screenUI = GameObject.Find("ScreenUI");
 
+
         DisableCrosshairDark();
         EnableCAM1();
         HideSubText();
         DisableDOF();
-
-
 
     }
 
@@ -61,16 +63,17 @@ public class MasterScript : MonoBehaviour
     //SubText
     public static void HideSubText()
     {
-        setSubText(" ");
+        subText.GetComponent<TextMeshProUGUI>().SetText(" ");
         subText.SetActive(false);
     }
-    public static void ShowSubText()
+    public static void toast(string text)
     {
-        subText.SetActive(true);
-    }
-    public static void setSubText(string textToSet)
-    {
-        subText.GetComponent<TextMeshProUGUI>().SetText(textToSet);
+        if (CastRay.objectChange)
+        {
+            subText.GetComponent<TextMeshProUGUI>().SetText(text);
+            subText.SetActive(true);
+            AudioManager.playDefaultSound();
+        }
     }
 
 
@@ -95,22 +98,11 @@ public class MasterScript : MonoBehaviour
     }
     public static void EnableCrosshairAll()
     {
-        crosshair.SetActive(true);
-        crosshairActive.SetActive(true);
-    }
-
-    public static void DisableCrosshairMain()
-    {
-        crosshair.SetActive(false);
-
-    }
-    public static void EnableCrosshairMain()
-    {
-        crosshair.SetActive(true);
-    }
-    public static void EnableCrosshairDark()
-    {
-        crosshairActive.SetActive(true);
+        if (CastRay.objectChange)
+        {
+            crosshair.SetActive(true);
+            crosshairActive.SetActive(true);
+        }
     }
     public static void DisableCrosshairDark()
     {
@@ -121,8 +113,11 @@ public class MasterScript : MonoBehaviour
 
     public static void EnableCrosshairRed()
     {
-        crosshairRed.SetActive(true);
-        crosshairActive.SetActive(false);
+        if (CastRay.objectChange)
+        {
+            crosshairRed.SetActive(true);
+            crosshairActive.SetActive(false);
+        }
     }
 
     public static void DisableCrosshairRed()
@@ -183,23 +178,17 @@ public class MasterScript : MonoBehaviour
         DisableCrosshairDark();
     }
 
-
-
-    public static void toast(string text)
-    {
-        setSubText(text);
-        ShowSubText();
-
-    }
-
     public static void setDefaultFOV()
     {
         MasterScript.CAM1.GetComponent<Camera>().fieldOfView = defaultFOV;
     }
 
 
-
-
+    public static void inactive()
+    {
+        HideSubText();
+        DisableCrosshairDark();
+    }
 
 
 }
