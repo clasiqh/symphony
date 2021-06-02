@@ -40,8 +40,6 @@ public class IsInteractive : MonoBehaviour
                 break;
 
 
-
-
             case "Computer":
                 MasterScript.EnableCAM2();
                 break;
@@ -68,7 +66,7 @@ public class IsInteractive : MonoBehaviour
     } //doStuff() close
 
 
-    private static void Select(Vector3 focusPosition, Vector3 camPosition)
+    public static void Select(Vector3 focusPosition, Vector3 camPosition)
     {
         MasterScript.selectedObject = CastRay.detected;
         //Disable collider on camera so it doesn't collide with object
@@ -82,6 +80,12 @@ public class IsInteractive : MonoBehaviour
         Destroy(MasterScript.selectedObject.GetComponent<Rigidbody>());
         MasterScript.inactive();
         MasterScript.inspecting = true;
+
+
+        if(MasterScript.selectedObject == InventoryManager.inventory)
+        {
+            MasterScript.DisableDOF();
+        }
     }
 
 

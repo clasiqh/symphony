@@ -10,6 +10,17 @@ public class Inspectable : MonoBehaviour
 
     public static void useInspectable()
     {
-        Debug.Log("here");
+        switch (CastRay.detected.name)
+        {
+            case "card_slot":
+                InventoryManager.storageIcon.SetActive(true);
+                Destroy(GameObject.Find("card_slot").GetComponent<Inspectable>());
+                Destroy(GameObject.Find("card_slot").GetComponent<Collider>());
+                MasterScript.foundItem = true;
+                break;
+
+            default:
+                break;
+        }
     }
 }

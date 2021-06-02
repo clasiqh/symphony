@@ -18,10 +18,14 @@ public class MasterScript : MonoBehaviour
     private static float defaultFOV = 54.79396f; // is defaultFOV - 20 for some reason idk
 
     public static bool inspecting = false;
+    public static bool foundItem = false;
+    public static Camera_WASD_movement wasdScript;
 
     public static GameObject selectedObject; //for select and deselect function (as CastRay.detected would change when inspecting)
 
     private static GameObject screenUI;
+    private static GameObject foundButton;
+    private static GameObject foundText;
 
 
 
@@ -40,16 +44,52 @@ public class MasterScript : MonoBehaviour
         screenUI = GameObject.Find("ScreenUI");
 
 
+        foundButton = GameObject.Find("FoundButton");
+        foundText = GameObject.Find("FoundText");
+        foundButton.transform.localPosition = new Vector2(0, Screen.height);
+
+        wasdScript = CAM1.GetComponent<Camera_WASD_movement>();
+        wasdScript.enabled = true;
+
+
         DisableCrosshairDark();
         EnableCAM1();
         HideSubText();
         DisableDOF();
 
+
+    }
+
+
+    public void Update()
+    {
+        if (foundItem)
+        {
+            showFound();
+        }
     }
 
 
 
+
     //CANVAS
+
+    public static void hideFound()
+    {
+
+    }
+
+    public static void showFound()
+    {
+        
+        foundButton.LeanMoveLocalY(Screen.height-38f, 0.5f).setEaseOutExpo();
+        foundButton.LeanMoveLocalY(Screen.height+32f, 0.5f).setEaseOutExpo().delay = 2.4f;
+        foundItem = false;
+
+
+    }
+
+
     public static void DisableCanvas()
     {
         canvas.SetActive(false);

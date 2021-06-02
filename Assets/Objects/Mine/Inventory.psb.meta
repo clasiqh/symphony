@@ -32,7 +32,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 1
+    spritePixelsToUnits: 4000
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -111,25 +111,275 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -313, y: -360}
-  platformSettings: []
+  - name: password_icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1672
+      y: 4
+      width: 98
+      height: 54
+    spriteID: 9a28f5d8023ded9488c87f3e6a43f2d4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 839, y: -450}
+  - name: storage_icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1298
+      y: 97
+      width: 72
+      height: 90
+    spriteID: ca7bb517277f3c645871d67c8399ab3d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 155, y: -341}
+  - name: key_icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1778
+      y: 4
+      width: 91
+      height: 55
+    spriteID: 57f426d954cd3d54b87bac380c030b3a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 790, y: -451}
+  - name: settings_icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1298
+      y: 4
+      width: 83
+      height: 85
+    spriteID: ca238f51a139861478f3c5bcaea30477
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -132, y: -436}
+  - name: crop_icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1389
+      y: 4
+      width: 79
+      height: 79
+    spriteID: 9408cb2068a10f1439bc2a414fe5e6f0
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 980, y: -438}
+  - name: videocam_icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1476
+      y: 4
+      width: 96
+      height: 64
+    spriteID: 05cf6ffcae86a9e40b40b0ac08167932
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 198, y: -445}
+  - name: note_icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1580
+      y: 4
+      width: 84
+      height: 70
+    spriteID: 57f3734efbdc48f468432c414364c9b6
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1024, y: -436}
+  - name: music_note_icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1877
+      y: 4
+      width: 54
+      height: 80
+    spriteID: d7f593ac7b2f57e41b08bc072da576dc
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1167, y: -438}
+  platformSettings:
+  - name: Default
+    overridden: 1
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
-  documentAlignment: 7
+  documentAlignment: 0
   importHiddenLayers: 0
-  importedTextureWidth: 2048
-  importedTextureHeight: 512
+  importedTextureWidth: 1024
+  importedTextureHeight: 1024
   documentSize: {x: 1920, y: 1080}
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   spriteCategoryList:
     categories: []
   textureActualWidth: 2048
-  textureActualHeight: 512
+  textureActualHeight: 2048
   spritePackingTag: 
   resliceFromLayer: 0
   characterMode: 1
   mosaicPSDLayers: []
   rigPSDLayers:
+  - name: Icons_Glow
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 118
+    mosaicPosition: {x: 0, y: 0}
+  - name: password_icon
+    spriteName: password_icon
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 9a28f5d8023ded9488c87f3e6a43f2d4
+    layerID: 106
+    mosaicPosition: {x: 1672, y: 4}
+  - name: storage_icon
+    spriteName: storage_icon
+    isGroup: 0
+    parentIndex: 0
+    spriteID: ca7bb517277f3c645871d67c8399ab3d
+    layerID: 105
+    mosaicPosition: {x: 1298, y: 97}
+  - name: key_icon
+    spriteName: key_icon
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 57f426d954cd3d54b87bac380c030b3a
+    layerID: 104
+    mosaicPosition: {x: 1778, y: 4}
+  - name: settings_icon
+    spriteName: settings_icon
+    isGroup: 0
+    parentIndex: 0
+    spriteID: ca238f51a139861478f3c5bcaea30477
+    layerID: 103
+    mosaicPosition: {x: 1298, y: 4}
+  - name: crop_icon
+    spriteName: crop_icon
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 9408cb2068a10f1439bc2a414fe5e6f0
+    layerID: 102
+    mosaicPosition: {x: 1389, y: 4}
+  - name: videocam_icon
+    spriteName: videocam_icon
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 05cf6ffcae86a9e40b40b0ac08167932
+    layerID: 101
+    mosaicPosition: {x: 1476, y: 4}
+  - name: note_icon
+    spriteName: note_icon
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 57f3734efbdc48f468432c414364c9b6
+    layerID: 100
+    mosaicPosition: {x: 1580, y: 4}
+  - name: music_note_icon
+    spriteName: music_note_icon
+    isGroup: 0
+    parentIndex: 0
+    spriteID: d7f593ac7b2f57e41b08bc072da576dc
+    layerID: 99
+    mosaicPosition: {x: 1877, y: 4}
   - name: BG
     spriteName: BG
     isGroup: 0
@@ -142,7 +392,7 @@ ScriptedImporter:
     parts: []
     dimension: {x: 0, y: 0}
     characterGroups: []
-  generateGOHierarchy: 0
+  generateGOHierarchy: 1
   textureAssetName: Inventory Texture
   prefabAssetName: Inventory Prefab
   spriteLibAssetName: Inventory Sprite Lib

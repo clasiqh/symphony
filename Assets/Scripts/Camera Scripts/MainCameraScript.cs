@@ -9,7 +9,7 @@ public class MainCameraScript : MonoBehaviour
     public float shootRange = 1.4f;
     [SerializeField] private LayerMask defaultLayer;
     [SerializeField] private LayerMask inspectLayer;
-    private static Camera_WASD_movement wasdScript;
+    
     public static float rotSpeed = 120f;
     public static float zoomSpeed = 300.0f;
 
@@ -18,8 +18,6 @@ public class MainCameraScript : MonoBehaviour
     {
         defaultLayer = LayerMask.GetMask("Default");
         inspectLayer = LayerMask.GetMask("Inspect");
-        wasdScript = this.GetComponent<Camera_WASD_movement>();
-        wasdScript.enabled = true;
 
     }
 
