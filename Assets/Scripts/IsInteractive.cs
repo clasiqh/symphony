@@ -55,6 +55,9 @@ public class IsInteractive : MonoBehaviour
                 }
                 break;
 
+            case "Keyboard":
+                GameObject.Find("MidiKeyboard").GetComponent<AudioSource>().Play();
+                break;
 
             default:
                 Debug.Log("default interactive object");

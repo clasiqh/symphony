@@ -26,6 +26,7 @@ public class MasterScript : MonoBehaviour
     private static GameObject screenUI;
     private static GameObject foundButton;
     private static GameObject foundText;
+    
 
 
 

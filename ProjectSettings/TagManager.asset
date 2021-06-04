@@ -10,6 +10,7 @@ TagManager:
   - lookable
   - Login
   - Desktop
+  - Keyboard
   layers:
   - Default
   - TransparentFX
