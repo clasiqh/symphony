@@ -10,7 +10,7 @@ public class WindowManager : OSManager
     public static GameObject cameraStorage;
 
 
-    private void Awake()
+    private void Start()
     {
         windowDefaultText = GameObject.Find("no connected devices");
         cameraStorage = GameObject.Find("CameraStorage");
@@ -20,8 +20,9 @@ public class WindowManager : OSManager
             windowDefaultText.SetActive(true);
             cameraStorage.SetActive(false);
         }
-        
+
         disableWindow();
+
     }
 
 
@@ -32,6 +33,11 @@ public class WindowManager : OSManager
             case "Top_Red":
                 disableWindow();
                 enableDesktop();
+                break;
+
+
+            case "CameraStorage":
+                Debug.Log("camera storage");
                 break;
 
             default:

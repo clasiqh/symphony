@@ -24,8 +24,8 @@ public class OSManager : MonoBehaviour
         //find references
         LoginGroup = GameObject.Find("Login");
         DesktopGroup = GameObject.Find("Desktop");
-        WindowScreen = GameObject.Find("WindowScreen");
-        
+        WindowScreen = GameObject.Find("WindowOS");
+
     }
 
 
@@ -85,7 +85,7 @@ public class OSManager : MonoBehaviour
     public static void enableDesktop()
     {
         DesktopGroup.SetActive(true);
-        disableWindow();
+        
     }
 
     public static void disableDesktop()

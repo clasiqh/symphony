@@ -15,7 +15,7 @@ public class DesktopManager : OSManager
     private static GameObject blackBin;
     private static GameObject blackFolder;
 
-    private void Awake()
+    private void Start()
     {
         computer = GameObject.Find("computer");
         bin = GameObject.Find("bin");
