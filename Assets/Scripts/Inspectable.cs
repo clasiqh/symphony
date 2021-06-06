@@ -16,7 +16,20 @@ public class Inspectable : MonoBehaviour
                 InventoryManager.storageIcon.SetActive(true);
                 Destroy(GameObject.Find("card_slot").GetComponent<Inspectable>());
                 Destroy(GameObject.Find("card_slot").GetComponent<Collider>());
-                MasterScript.foundItem = true;
+                MasterScript.cardFound = true;
+                WindowManager.cameraStorage.SetActive(true);
+                WindowManager.windowDefaultText.SetActive(false);
+                MasterScript.showMessage("Item Found: Memeory Card");
+                
+                break;
+
+
+            case "passwordLocation":
+                InventoryManager.passwordIcon.SetActive(true);
+                Destroy(GameObject.Find("passwordLocation").GetComponent<Inspectable>());
+                Destroy(GameObject.Find("passwordLocation").GetComponent<Collider>());
+                MasterScript.passwordFound = true;
+                MasterScript.showMessage("Item Found: Computer Password");
                 break;
 
             default:
